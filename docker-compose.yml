@@ -1,0 +1,31 @@
+version: '3.8'
+
+services:
+  portfolio:
+    build: .
+    ports:
+      - "8080:80"
+    environment:
+      - NODE_ENV=production
+    restart: unless-stopped
+    networks:
+      - portfolio-network
+
+  portfolio-dev:
+    build:
+      context: .
+      target: builder
+    ports:
+      - "3000:3000"
+    volumes:
+      - ./src:/app/src
+      - ./public:/app/public
+    environment:
+      - NODE_ENV=development
+    command: npm run dev
+    networks:
+      - portfolio-network
+
+networks:
+  portfolio-network:
+    driver: bridge
