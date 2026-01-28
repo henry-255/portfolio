@@ -1,149 +1,108 @@
-import React, { useState, useEffect } from 'react';
-import { FaBars, FaTimes, FaSun, FaMoon, FaLaptop } from 'react-icons/fa';
-import { useTheme } from '../contexts/ThemeContext';
-import { cn } from '../lib/utils';
+import { useState, useEffect } from 'react';
+import { FaBars, FaTimes, FaGithub, FaLinkedin, FaFileDownload } from 'react-icons/fa';
+import { HiMail } from 'react-icons/hi';
 
-const navItems = [
-  { label: 'Home', href: '#home' },
-  { label: 'Projects', href: '#projects' },
-  { label: 'Skills', href: '#skills' },
-  { label: 'About', href: '#about' },
-  { label: 'Contact', href: '#contact' },
-];
-
-function Navigation() {
+export default function Navigation() {
   const [isOpen, setIsOpen] = useState(false);
-  const [isScrolled, setIsScrolled] = useState(false);
-  const { theme, setTheme, resolvedTheme } = useTheme();
+  const [scrolled, setScrolled] = useState(false);
 
   useEffect(() => {
     const handleScroll = () => {
-      setIsScrolled(window.scrollY > 20);
+      setScrolled(window.scrollY > 10);
     };
-
     window.addEventListener('scroll', handleScroll);
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
-  const themeIcons = {
-    light: <FaSun />,
-    dark: <FaMoon />,
-    system: <FaLaptop />,
-  };
+  const navItems = [
+    { label: 'Home', href: '#home' },
+    { label: 'Projects', href: '#projects' },
+    { label: 'Skills', href: '#skills' },
+    { label: 'About', href: '#about' },
+    { label: 'Contact', href: '#contact' },
+  ];
 
   return (
-    <nav
-      className={cn(
-        'fixed top-0 left-0 right-0 z-50 transition-all duration-300',
-        isScrolled
-          ? 'py-4 bg-background/80 backdrop-blur-xl border-b border-foreground/10'
-          : 'py-6 bg-transparent'
-      )}
-    >
-      <div className="max-w-7xl mx-auto px-4 md:px-8">
-        <div className="flex items-center justify-between">
+    <nav className={`fixed w-full z-50 transition-all duration-300 ${scrolled ? 'py-3 bg-gray-900/95 backdrop-blur-md' : 'py-4'}`}>
+      <div className="max-w-6xl mx-auto px-4">
+        <div className="flex justify-between items-center">
           {/* Logo */}
-          <a
-            href="#home"
-            className="text-2xl font-bold bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent"
-          >
-            Portfolio
+          <a href="#home" className="text-xl font-bold text-white">
+            Henry Mba
           </a>
 
-          {/* Desktop Navigation */}
-          <div className="hidden md:flex items-center gap-8">
+          {/* Desktop Menu */}
+          <div className="hidden md:flex items-center space-x-6">
             {navItems.map((item) => (
               <a
                 key={item.label}
                 href={item.href}
-                className="text-foreground/80 hover:text-primary transition-colors font-medium"
-                onClick={() => setIsOpen(false)}
+                className="text-gray-300 hover:text-white transition-colors text-sm font-medium"
               >
                 {item.label}
               </a>
             ))}
-
-            {/* Theme Toggle */}
-            <div className="flex items-center gap-1 px-2 py-1 rounded-2xl bg-foreground/5">
-              {(['light', 'dark', 'system'] as const).map((t) => (
-                <button
-                  key={t}
-                  onClick={() => setTheme(t)}
-                  className={cn(
-                    'p-2 rounded-xl transition-all',
-                    theme === t
-                      ? 'bg-primary text-white'
-                      : 'hover:bg-foreground/10'
-                  )}
-                  aria-label={`Switch to ${t} theme`}
-                >
-                  {themeIcons[t]}
-                </button>
-              ))}
+            
+            {/* Social Icons */}
+            <div className="flex items-center space-x-4 ml-4 border-l border-gray-700 pl-4">
+              <a href="https://github.com" className="text-gray-400 hover:text-white">
+                <FaGithub size={18} />
+              </a>
+              <a href="https://linkedin.com" className="text-gray-400 hover:text-white">
+                <FaLinkedin size={18} />
+              </a>
             </div>
 
             {/* Resume Button */}
             <a
               href="/resume.pdf"
-              download
-              className="px-6 py-3 rounded-2xl bg-primary text-white font-semibold hover:bg-primary-dark transition-colors"
+              className="flex items-center gap-2 px-4 py-2 bg-blue-600 hover:bg-blue-700 text-white rounded-lg text-sm font-medium transition-colors"
             >
+              <FaFileDownload />
               Resume
             </a>
           </div>
 
           {/* Mobile Menu Button */}
           <button
-            className="md:hidden text-2xl text-foreground"
             onClick={() => setIsOpen(!isOpen)}
+            className="md:hidden text-white p-2"
             aria-label="Toggle menu"
           >
-            {isOpen ? <FaTimes /> : <FaBars />}
+            {isOpen ? <FaTimes size={22} /> : <FaBars size={22} />}
           </button>
         </div>
 
         {/* Mobile Menu */}
         {isOpen && (
-          <div className="md:hidden mt-4 pb-4 animate-fade-in">
-            <div className="flex flex-col space-y-4">
+          <div className="md:hidden mt-4 pt-4 border-t border-gray-800">
+            <div className="flex flex-col space-y-3">
               {navItems.map((item) => (
                 <a
                   key={item.label}
                   href={item.href}
-                  className="py-3 text-foreground/80 hover:text-primary transition-colors font-medium"
+                  className="text-gray-300 hover:text-white py-2 text-sm font-medium"
                   onClick={() => setIsOpen(false)}
                 >
                   {item.label}
                 </a>
               ))}
               
-              {/* Mobile Theme Toggle */}
-              <div className="flex items-center gap-2 pt-4 border-t border-foreground/10">
-                <span className="text-sm font-medium">Theme:</span>
-                <div className="flex gap-1">
-                  {(['light', 'dark', 'system'] as const).map((t) => (
-                    <button
-                      key={t}
-                      onClick={() => setTheme(t)}
-                      className={cn(
-                        'p-2 rounded-lg transition-all',
-                        theme === t
-                          ? 'bg-primary text-white'
-                          : 'hover:bg-foreground/10'
-                      )}
-                      aria-label={`Switch to ${t} theme`}
-                    >
-                      {themeIcons[t]}
-                    </button>
-                  ))}
-                </div>
+              <div className="flex space-x-4 pt-2">
+                <a href="https://github.com" className="text-gray-400 hover:text-white p-2">
+                  <FaGithub size={20} />
+                </a>
+                <a href="https://linkedin.com" className="text-gray-400 hover:text-white p-2">
+                  <FaLinkedin size={20} />
+                </a>
+                <a href="mailto:henry@example.com" className="text-gray-400 hover:text-white p-2">
+                  <HiMail size={20} />
+                </a>
               </div>
-
-              {/* Mobile Resume Button */}
+              
               <a
                 href="/resume.pdf"
-                download
-                className="w-full py-3 rounded-xl bg-primary text-white font-semibold hover:bg-primary-dark transition-colors text-center"
+                className="mt-3 py-3 bg-blue-600 hover:bg-blue-700 text-white rounded-lg text-center text-sm font-medium"
                 onClick={() => setIsOpen(false)}
               >
                 Download Resume
@@ -155,5 +114,3 @@ function Navigation() {
     </nav>
   );
 }
-
-export default Navigation;

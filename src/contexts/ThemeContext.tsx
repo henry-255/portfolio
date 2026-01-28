@@ -1,6 +1,4 @@
-'use client';
-
-import React, { createContext, useContext, useEffect, useState } from 'react';
+import { createContext, useContext, useEffect, useState, ReactNode } from 'react';
 
 type Theme = 'light' | 'dark' | 'system';
 
@@ -12,16 +10,9 @@ interface ThemeContextType {
 
 const ThemeContext = createContext<ThemeContextType | undefined>(undefined);
 
-export function ThemeProvider({ children }: { children: React.ReactNode }) {
-  const [theme, setTheme] = useState<Theme>(() => {
-    if (typeof window !== 'undefined') {
-      const savedTheme = localStorage.getItem('theme') as Theme;
-      return savedTheme || 'system';
-    }
-    return 'system';
-  });
-
-  const [resolvedTheme, setResolvedTheme] = useState<'light' | 'dark'>('light');
+export function ThemeProvider({ children }: { children: ReactNode }) {
+  const [theme, setTheme] = useState<Theme>('dark'); // Default to dark
+  const [resolvedTheme, setResolvedTheme] = useState<'light' | 'dark'>('dark');
 
   useEffect(() => {
     const root = window.document.documentElement;
@@ -33,15 +24,6 @@ export function ThemeProvider({ children }: { children: React.ReactNode }) {
       setResolvedTheme(finalTheme);
       root.classList.remove('light', 'dark');
       root.classList.add(finalTheme);
-      
-      // Update CSS variables
-      if (finalTheme === 'dark') {
-        root.style.setProperty('--background', 'oklch(0.15 0.02 260)');
-        root.style.setProperty('--foreground', 'oklch(0.97 0.01 260)');
-      } else {
-        root.style.setProperty('--background', 'oklch(0.97 0.01 260)');
-        root.style.setProperty('--foreground', 'oklch(0.15 0.02 260)');
-      }
     };
 
     updateTheme();
@@ -54,19 +36,11 @@ export function ThemeProvider({ children }: { children: React.ReactNode }) {
   }, [theme]);
 
   useEffect(() => {
-    if (typeof window !== 'undefined') {
-      localStorage.setItem('theme', theme);
-    }
+    localStorage.setItem('theme', theme);
   }, [theme]);
 
-  const value: ThemeContextType = {
-    theme,
-    setTheme,
-    resolvedTheme,
-  };
-
   return (
-    <ThemeContext.Provider value={value}>
+    <ThemeContext.Provider value={{ theme, setTheme, resolvedTheme }}>
       {children}
     </ThemeContext.Provider>
   );
