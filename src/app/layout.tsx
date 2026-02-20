@@ -14,12 +14,16 @@ const inter = Inter({
 
 export const metadata: Metadata = {
   title: {
-    default: "Anuj Jain - Full-stack Python Developer & AI Engineer | Professional Portfolio",
-    template: "%s | Anuj Jain Portfolio"
+    default: "Mba Henry" +
+        " - Full-stack Python Developer & AI Engineer | Professional Portfolio",
+    template: "%s | Mba Henry" +
+        " Portfolio"
   },
-  description: "Professional portfolio of Anuj Jain - Full-stack Python Developer & AI Engineer. SIH 2025 Finalist showcasing 25+ automation projects, IoT systems, and AI-powered solutions. Available for internships.",
+  description: "Professional portfolio of Mba Henry" +
+      " - Full-stack Python Developer & AI Engineer. SIH 2025 Finalist showcasing 25+ automation projects, IoT systems, and AI-powered solutions. Available for internships.",
   keywords: [
-    "Anuj Jain",
+    "Mba Henry" +
+    "",
     "Full-stack Developer", 
     "Python Developer",
     "AI Engineer",
@@ -47,12 +51,15 @@ export const metadata: Metadata = {
   ],
   authors: [
     {
-      name: "Anuj Jain",
+      name: "Mba Henry" +
+          "",
       url: "https://portfolio.anujjainbatu.tech/",
     },
   ],
-  creator: "Anuj Jain",
-  publisher: "Anuj Jain",
+  creator: "Mba Henry" +
+      "",
+  publisher: "Mba Henry" +
+      "",
   robots: {
     index: true,
     follow: true,
@@ -68,28 +75,33 @@ export const metadata: Metadata = {
     type: "website",
     locale: "en_US",
     url: "https://portfolio.anujjainbatu.tech/",
-    title: "Anuj Jain - Full-stack Python Developer & AI Engineer | Professional Portfolio",
+    title: "Mba Henry" +
+        " - Full-stack Python Developer & AI Engineer | Professional Portfolio",
     description: "Professional portfolio showcasing AI-powered projects, IoT systems, and full-stack development. SIH 2025 Finalist with 25+ automation projects. Available for internships.",
-    siteName: "Anuj Jain Portfolio",
+    siteName: "Mba Henry" +
+        " Portfolio",
     images: [
       {
         url: "https://portfolio.anujjainbatu.tech/portfolio.png",
         width: 1200,
         height: 630,
-        alt: "Anuj Jain - Professional Portfolio with AI Chatbot",
+        alt: "Mba Henry" +
+            " - Professional Portfolio with AI Chatbot",
         type: "image/png",
       },
     ],
   },
   twitter: {
     card: "summary_large_image",
-    title: "Anuj Jain - Full-stack Python Developer & AI Engineer",
+    title: "Mba Henry" +
+        " - Full-stack Python Developer & AI Engineer",
     description: "Professional portfolio showcasing AI projects, IoT systems, and automation solutions. SIH 2025 Finalist available for internships.",
     creator: "@anujainbatu",
     site: "@anujainbatu",
     images: [{
       url: "https://portfolio.anujjainbatu.tech/portfolio.png",
-      alt: "Anuj Jain Professional Portfolio"
+      alt: "Mba Henry" +
+          " Professional Portfolio"
     }],
   },
   icons: {
@@ -130,14 +142,15 @@ export default function RootLayout({
             __html: JSON.stringify({
               "@context": "https://schema.org",
               "@type": "Person",
-              "name": "Anuj Jain",
-              "jobTitle": "Full-stack Python Developer & AI Engineer",
+              "name": "Mba Henry" +
+                  "",
+              "jobTitle": "Software & AI Engineer",
               "url": "https://portfolio.anujjainbatu.tech/",
               "image": "https://portfolio.anujjainbatu.tech/profile.jpeg",
               "sameAs": [
-                "https://github.com/anujjainbatu",
-                "https://linkedin.com/in/anujjainbatu",
-                "https://x.com/anujainbatu"
+                "https://github.com/h-255",
+                "https://www.linkedin.com/in/henry-mba-8368613b0",
+                "https://x.com/hmba370"
               ],
               "worksFor": {
                 "@type": "Organization",
