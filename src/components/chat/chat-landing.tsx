@@ -61,17 +61,18 @@ const ChatLanding: React.FC<ChatLandingProps> = ({ submitQuery, handlePresetRepl
     },
   };
 
-  const itemVariants = {
-    hidden: { opacity: 0, y: 20 },
-    visible: {
-      opacity: 1,
-      y: 0,
-        transition: {
-            ease: [0.42, 0, 0.58, 1] as const,   // ← add as const
-            duration: 0.6,
+    const itemVariants = {
+        hidden: { opacity: 0, y: 20 },
+        visible: {
+            opacity: 1,
+            y: 0,
+            transition: {
+                duration: 0.6,               // or whatever you have
+                ease: [0.42, 0, 0.58, 1] as const,   // ← this line fixes it
+                // delay, staggerChildren, etc.
+            },
         },
-    },
-  };
+    };
 
   return (
     <motion.div
