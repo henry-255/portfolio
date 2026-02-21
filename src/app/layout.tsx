@@ -38,7 +38,6 @@ export const metadata: Metadata = {
     "Django",
     "Automation",
     "LangChain",
-    "Smart India Hackathon",
     "Freelancer",
     "AI Chatbot",
     "Professional Portfolio",
@@ -132,7 +131,8 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" suppressHydrationWarning>
-      <head>
+    <head>
+        <title></title>
         <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
         <link rel="icon" href="/favicon.ico" sizes="any" />
         <link rel="canonical" href="https://portfolio.anujjainbatu.tech/" />
