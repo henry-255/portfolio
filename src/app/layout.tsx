@@ -1,4 +1,4 @@
-import { Analytics } from "@vercel/analytics/react"
+import { Analytics } from "@vercel/analytics/react";
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import { cn } from "@/lib/utils";
@@ -7,191 +7,181 @@ import { Toaster } from "@/components/ui/sonner";
 import "./globals.css";
 
 // Load Inter font for non-Apple devices
-const inter = Inter({ 
-  subsets: ["latin"],
-  variable: "--font-inter",
+const inter = Inter({
+    subsets: ["latin"],
+    variable: "--font-inter",
 });
 
 export const metadata: Metadata = {
-  title: {
-    default: "Mba Henry" +
-        " - Full-stack Python Developer & AI Engineer | Professional Portfolio",
-    template: "%s | Mba Henry" +
-        " Portfolio"
-  },
-  description: "Professional portfolio of Mba Henry" +
-      " - Full-stack Python Developer & AI Engineer. SIH 2025 Finalist showcasing 25+ automation projects, IoT systems, and AI-powered solutions. Available for internships.",
-  keywords: [
-    "Mba Henry" +
-    "",
-    "Full-stack Developer", 
-    "Python Developer",
-    "AI Engineer",
-    "Portfolio",
-    "Software Developer",
-    "Machine Learning",
-    "IoT Developer",
-    "Web Development",
-    "Next.js",
-    "React",
-    "FastAPI",
-    "Django",
-    "Automation",
-    "LangChain",
-    "Freelancer",
-    "AI Chatbot",
-    "Professional Portfolio",
-    "Developer Portfolio",
-    "Tech Portfolio",
-    "Internship",
-    "Python Automation",
-    "Web Scraping",
-    "API Development"
-  ],
-  authors: [
-    {
-      name: "Mba Henry" +
-          "",
-      url: "https://portfolio.anujjainbatu.tech/",
+    title: {
+        default: "Henry Mba - Software Engineer and AI Engineer | Professional Portfolio",
+        template: "%s | Henry Mba Portfolio",
     },
-  ],
-  creator: "Mba Henry" +
-      "",
-  publisher: "Mba Henry" +
-      "",
-  robots: {
-    index: true,
-    follow: true,
-    googleBot: {
-      index: true,
-      follow: true,
-      "max-video-preview": -1,
-      "max-image-preview": "large",
-      "max-snippet": -1,
+    description:
+        "Professional portfolio of Henry Mba - Software Engineer and AI Engineer based in Abuja, Nigeria. Building AI-powered solutions, automation tools, full-stack web apps, and more. Passionate about Python, machine learning, and innovative tech. Open to internships, freelance opportunities, and collaborations.",
+    keywords: [
+        "Henry Mba",
+        "Software Engineer",
+        "AI Engineer",
+        "Portfolio",
+        "Python",
+        "Machine Learning",
+        "Web Development",
+        "Full Stack",
+        "Automation",
+        "Abuja",
+        "Nigeria",
+        "Developer Portfolio",
+        "Tech Portfolio",
+        "Internship",
+        "Freelance",
+    ],
+    authors: [
+        {
+            name: "Henry Mba",
+            url: "https://portfolio-apo8yec91-henry-mbas-projects.vercel.app/",
+        },
+    ],
+    creator: "Henry Mba",
+    publisher: "Henry Mba",
+    robots: {
+        index: true,
+        follow: true,
+        googleBot: {
+            index: true,
+            follow: true,
+            "max-video-preview": -1,
+            "max-image-preview": "large",
+            "max-snippet": -1,
+        },
     },
-  },
-  openGraph: {
-    type: "website",
-    locale: "en_US",
-    url: "https://portfolio.anujjainbatu.tech/",
-    title: "Mba Henry" +
-        " - Full-stack Python Developer & AI Engineer | Professional Portfolio",
-    description: "Professional portfolio showcasing AI-powered projects, IoT systems, and full-stack development. SIH 2025 Finalist with 25+ automation projects. Available for internships.",
-    siteName: "Mba Henry" +
-        " Portfolio",
-    images: [
-      {
-        url: "https://portfolio.anujjainbatu.tech/portfolio.png",
-        width: 1200,
-        height: 630,
-        alt: "Mba Henry" +
-            " - Professional Portfolio with AI Chatbot",
-        type: "image/png",
-      },
-    ],
-  },
-  twitter: {
-    card: "summary_large_image",
-    title: "Mba Henry" +
-        " - Full-stack Python Developer & AI Engineer",
-    description: "Professional portfolio showcasing AI projects, IoT systems, and automation solutions. SIH 2025 Finalist available for internships.",
-    creator: "@anujainbatu",
-    site: "@anujainbatu",
-    images: [{
-      url: "https://portfolio.anujjainbatu.tech/portfolio.png",
-      alt: "Mba Henry" +
-          " Professional Portfolio"
-    }],
-  },
-  icons: {
-    icon: [
-      {
-        url: "/favicon.ico",
-        sizes: "any",
-      }
-    ],
-    shortcut: "/favicon.ico?v=2",
-    apple: "/apple-touch-icon.svg?v=2",
-  },
-  manifest: "/manifest.json",
-  alternates: {
-    canonical: "https://portfolio.anujjainbatu.tech/",
-  },
-  category: "technology",
-  classification: "Portfolio Website",
-  other: {
-    "google-site-verification": "your-google-verification-code-here",
-  },
+    openGraph: {
+        type: "website",
+        locale: "en_US",
+        url: "https://portfolio-apo8yec91-henry-mbas-projects.vercel.app/",
+        title: "Henry Mba - Software Engineer and AI Engineer | Professional Portfolio",
+        description:
+            "Professional portfolio of Henry Mba - Software Engineer and AI Engineer based in Abuja, Nigeria. Building AI-powered solutions, automation tools, full-stack web apps, and more. Passionate about Python, machine learning, and innovative tech. Open to opportunities.",
+        siteName: "Henry Mba Portfolio",
+        images: [
+            {
+                url: "/portfolio.png", // Upload your 1200x630 OG image to /public/portfolio.png
+                width: 1200,
+                height: 630,
+                alt: "Henry Mba - Software Engineer and AI Engineer Portfolio",
+                type: "image/png",
+            },
+        ],
+    },
+    twitter: {
+        card: "summary_large_image",
+        title: "Henry Mba - Software Engineer and AI Engineer",
+        description:
+            "Professional portfolio of Henry Mba - Software Engineer and AI Engineer based in Abuja, Nigeria. Building AI-powered solutions, automation tools, full-stack web apps, and more. Open to internships & freelance.",
+        creator: "@hmba370",
+        site: "@hmba370",
+        images: [
+            {
+                url: "/portfolio.png", // Same as OG image
+                alt: "Henry Mba Professional Portfolio",
+            },
+        ],
+    },
+    icons: {
+        icon: [
+            {
+                url: "/favicon.ico",
+                sizes: "any",
+            },
+        ],
+        shortcut: "/favicon.ico?v=2",
+        apple: "/apple-touch-icon.svg?v=2",
+    },
+    manifest: "/manifest.json",
+    alternates: {
+        canonical: "https://portfolio-apo8yec91-henry-mbas-projects.vercel.app/",
+    },
+    category: "technology",
+    classification: "Portfolio Website",
+    other: {
+        "google-site-verification": "your-google-verification-code-here", // Replace if you have one
+    },
 };
 
 export default function RootLayout({
-  children,
-}: Readonly<{
-  children: React.ReactNode;
+                                       children,
+                                   }: Readonly<{
+    children: React.ReactNode;
 }>) {
-  return (
-    <html lang="en" suppressHydrationWarning>
-    <head>
-        <title></title>
-        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
-        <link rel="icon" href="/favicon.ico" sizes="any" />
-        <link rel="canonical" href="https://portfolio.anujjainbatu.tech/" />
-        <script
-          type="application/ld+json"
-          dangerouslySetInnerHTML={{
-            __html: JSON.stringify({
-              "@context": "https://schema.org",
-              "@type": "Person",
-              "name": "Mba Henry" +
-                  "",
-              "jobTitle": "Software & AI Engineer",
-              "url": "https://portfolio.anujjainbatu.tech/",
-              "image": "https://portfolio.anujjainbatu.tech/profile.jpeg",
-              "sameAs": [
-                "https://github.com/h-255",
-                "https://www.linkedin.com/in/henry-mba-8368613b0",
-                "https://x.com/hmba370"
-              ],
-              "worksFor": {
-                "@type": "Organization",
-                "name": "Freelance"
-              },
-              "alumniOf": {
-                "@type": "Organization",
-                "name": "SATI"
-              },
-              "knowsAbout": [
-                "Python Development",
-                "AI Engineering",
-                "Machine Learning",
-                "IoT Systems",
-                "Web Development",
-                "Automation",
-                "Full Stack Development"
-              ],
-              "description": "Full-stack Python Developer & AI Engineer with expertise in building AI-powered solutions, IoT systems, and automation tools. SIH 2025 Finalist with 25+ delivered projects."
-            })
-          }}
-        />
-      </head>
-      <body
-        className={cn(
-          "min-h-screen bg-background font-sans antialiased",
-          inter.variable,
-        )}
-      >
-        <ThemeProvider
-          attribute="class"
-          defaultTheme="light"
-          enableSystem={false}
+    return (
+        <html lang="en" suppressHydrationWarning>
+        <head>
+            <meta
+                name="viewport"
+                content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"
+            />
+            <link rel="icon" href="/favicon.ico" sizes="any" />
+            <link
+                rel="canonical"
+                href="https://portfolio-apo8yec91-henry-mbas-projects.vercel.app/"
+            />
+            <script
+                type="application/ld+json"
+                dangerouslySetInnerHTML={{
+                    __html: JSON.stringify({
+                        "@context": "https://schema.org",
+                        "@type": "Person",
+                        name: "Henry Mba",
+                        jobTitle: "Software Engineer and AI Engineer",
+                        url: "https://portfolio-apo8yec91-henry-mbas-projects.vercel.app/",
+                        image:
+                            "https://pbs.twimg.com/profile_images/2010670368365662208/uoO8_bgz.jpg",
+                        sameAs: [
+                            "https://github.com/henry-255",
+                            "https://www.linkedin.com/in/henry-mba-8368613b0",
+                            "https://x.com/hmba370",
+                        ],
+                        address: {
+                            "@type": "PostalAddress",
+                            addressLocality: "Abuja",
+                            addressRegion: "Federal Capital Territory",
+                            addressCountry: "NG",
+                        },
+                        worksFor: {
+                            "@type": "Organization",
+                            name: "Freelance / Independent",
+                        },
+                        knowsAbout: [
+                            "Software Engineering",
+                            "AI Engineering",
+                            "Python",
+                            "Machine Learning",
+                            "Web Development",
+                            "Automation",
+                            "Full Stack Development",
+                        ],
+                        description:
+                            "Software Engineer and AI Engineer based in Abuja, Nigeria. Passionate about building intelligent systems, automation tools, full-stack applications, and innovative tech solutions. Open to internships, freelance work, and collaborations.",
+                    }),
+                }}
+            />
+        </head>
+        <body
+            className={cn(
+                "min-h-screen bg-background font-sans antialiased",
+                inter.variable,
+            )}
         >
-          <main className="flex min-h-screen flex-col">
-            {children}
-          </main>
-          <Toaster />
+        <ThemeProvider
+            attribute="class"
+            defaultTheme="light"
+            enableSystem={false}
+        >
+            <main className="flex min-h-screen flex-col">{children}</main>
+            <Toaster />
         </ThemeProvider>
         <Analytics />
-      </body>
-    </html>
-  );
+        </body>
+        </html>
+    );
 }
