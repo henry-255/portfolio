@@ -65,7 +65,7 @@ export const metadata: Metadata = {
         siteName: "Henry Mba Portfolio",
         images: [
             {
-                url: "/portfolio.png", // Upload your 1200x630 OG image to /public/portfolio.png
+                url: "/portfolio.png",
                 width: 1200,
                 height: 630,
                 alt: "Henry Mba - Software Engineer and AI Engineer Portfolio",
@@ -82,7 +82,7 @@ export const metadata: Metadata = {
         site: "@hmba370",
         images: [
             {
-                url: "/portfolio.png", // Same as OG image
+                url: "/portfolio.png",
                 alt: "Henry Mba Professional Portfolio",
             },
         ],
