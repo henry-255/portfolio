@@ -62,14 +62,14 @@ const AvailabilityCard = ({ data }: AvailabilityCardProps) => {
           {/* Avatar placeholder */}
           <div className="bg-muted h-16 w-16 overflow-hidden rounded-full shadow-md">
             <img
-              src="/profile.jpeg"
-              alt="Anuj's avatar"
+              src="/profile.jpg"
+              alt="Henry's avatar"
               className="h-full w-full object-cover object-[center_top_-5%] scale-95"
             />
           </div>
           <div>
             <h2 className="text-foreground text-2xl font-semibold">
-              Anuj Jain
+             Henry Mba
             </h2>
             <p className="text-muted-foreground text-sm">
               Available for Opportunities
@@ -132,7 +132,7 @@ const AvailabilityCard = ({ data }: AvailabilityCardProps) => {
           <div>
             <p className="text-foreground text-sm font-medium">Location</p>
             <p className="text-muted-foreground text-sm">
-              {data?.preferences.location || "Based in India, open to relocation for the right opportunity 🇮🇳"}
+              {data?.preferences.location || "Based in Nigeria, open to relocation for the right opportunity "}
             </p>
           </div>
         </div>
@@ -161,7 +161,6 @@ const AvailabilityCard = ({ data }: AvailabilityCardProps) => {
                 )) || (
                   <>
                     <li>Docker, Git, GitHub Actions, AWS</li>
-                    <li>Firebase, Heroku, ESP32, IoT</li>
                     <li>Machine Learning, AI Agents</li>
                     <li>Web Scraping, Automation</li>
                   </>
@@ -186,9 +185,8 @@ const AvailabilityCard = ({ data }: AvailabilityCardProps) => {
           What I bring
         </p>
         <p className="text-foreground text-sm">
-          {data?.experience.internshipCompleted || "Real-world ML experience from MookMati (Genre classification, FastAPI deployment, AWS)."} <br /> 
-          {data?.achievements[0] || "2nd position in Smart India Hackathon 2025 among 88,221 teams with hideFlare cybersecurity tool."} <br /> 
-          {data?.experience.freelanceWork || "25+ freelance automation projects delivered on Fiverr, cutting manual work by 60%."}
+          {data?.experience.internshipCompleted || "Real-world Software Engineering experience from Digital Oxygen(Web Development, Lecturing on Software development, Laravel)."} <br />
+          {data?.experience.freelanceWork || "5+ freelance projects delivered"}
         </p>
       </div>
 
